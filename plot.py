@@ -45,7 +45,8 @@ while True:
 		x = np.array([t for t in listOfColumns[listOfColumnElements.index(input[0])] if not isAValidDigit.match(t) == None],np.float64)
 		y = np.array([t for t in listOfColumns[listOfColumnElements.index(input[1])] if not isAValidDigit.match(t) == None],np.float64)
 		scatter(x,y, marker='+', c='r')
-
+		xlabel(input[0])
+		ylabel(input[1])
 		fit =polyfit(x,y,1)
 		fit_fn=poly1d(fit)
 		plot(x,fit_fn(x),'--k')
@@ -53,9 +54,5 @@ while True:
 	except Exception: 
 	  pass
 
-
-#with open('some2.csv', 'wb') as f:
-#	writer = csv.writer(f)
-#	writer.writerows(listOfColumns)
 
 
